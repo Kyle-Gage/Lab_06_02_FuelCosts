@@ -6,11 +6,11 @@ public class Main
     public static void main(String[] args)
     {
 	Scanner in = new Scanner(System.in);
-    int gallonGas = 0;
+    int tankGallons = 0;
     double milePerGallon = 0;
     double pricePerGallon = 0;
-    double milesTravel;
-    double costMiles;
+    double milesTravelTank; // Tankgallons * milespergallon
+    double cost100Miles; // (100 miles / milespergallon) * Price per gallon
     String trash;
 
 
@@ -18,7 +18,7 @@ public class Main
 
         if (in.hasNextInt())
         {
-            gallonGas = in.nextInt();
+            tankGallons = in.nextInt();
             in.nextLine();
         }
         else
@@ -60,9 +60,9 @@ public class Main
         }
 
 
-        milesTravel = gallonGas * milePerGallon;
-        costMiles = (100 / milePerGallon) * pricePerGallon;
+        milesTravelTank = tankGallons * milePerGallon;
+        cost100Miles = (100 / milePerGallon) * pricePerGallon;
 
-        System.out.println("The cost for you to travel 100 miles would be $" + costMiles + " And you can travel " + milesTravel + " miles with the amount of gas you have in your car currently.");
+        System.out.println("The cost for you to travel 100 miles would be $" + cost100Miles + " And you can travel " + milesTravelTank + " miles with the amount of gas you have in your car currently.");
     }
 }
